@@ -6,11 +6,17 @@ type LIstProps = {
 const List = (props: LIstProps) => {
   return (
     <>
-      <ul className="list-outside p-8 list-disc marker:bg-green">
+      <div className=" p-8 ">
         {props.meaning.map((def, index) => (
-          <li key={index}> {def}</li>
+          <div key={index} className="flex pt-0  items-baseline mb-4">
+            <div
+              className="h-[5px] w-[5px] rounded-full bg-primary-blue pr-1 mr-4
+            "
+            ></div>{" "}
+            <h1 className="dark:text-almost-white">{def}</h1>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 };

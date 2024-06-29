@@ -49,7 +49,7 @@ function Nav(props: FontProps) {
           <select
             name="fonts"
             id="fonts"
-            className="bg-white dark:bg-primary-black dark:text-white"
+            className="bg-white dark:bg-primary-black dark:text-white outline-none "
             onChange={handleFontChange}
           >
             <option value="sans-selif">Sans-Serif</option>

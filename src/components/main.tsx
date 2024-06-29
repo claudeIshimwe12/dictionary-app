@@ -34,7 +34,6 @@ export const Main = () => {
           }
           setFoundWord(word[0].word);
           setPhonetics(word[0].phonetic);
-          //   setMeaning(word[0].meanings[0].definitions);
           console.log(word[0].meanings[0].definitions);
           const defs: definition[] = word[0].meanings[0].definitions.map(
             (def: definition) => def?.definition
