@@ -1,11 +1,11 @@
 import Nav from "./components/nav";
-import Input from "./components/Input";
+import { Main } from "./components/main";
 function App() {
   return (
     <>
-      <div className="bg-white dark:bg-primary-black h-screen">
+      <div className="font-mono bg-white dark:bg-primary-black h-screen">
         <Nav />
-        <Input />
+        <Main />
       </div>
     </>
   );
