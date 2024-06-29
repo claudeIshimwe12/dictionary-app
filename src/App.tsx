@@ -5,7 +5,7 @@ function App() {
   const [font, setFont] = useState("font-sans");
   return (
     <>
-      <div className={`${font} bg-white dark:bg-primary-black h-screen`}>
+      <div className={`${font} bg-white dark:bg-primary-black`}>
         <Nav changeFont={setFont} />
         <Main />
       </div>
