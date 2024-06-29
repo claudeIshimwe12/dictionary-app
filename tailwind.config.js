@@ -11,6 +11,9 @@ export default {
     },
 
     extend: {
+      spacing: {
+        tablet: "4.38rem",
+      },
       colors: {
         "primary-black": "#050505",
         "semi-black": "#1F1F1F",

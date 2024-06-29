@@ -21,7 +21,9 @@ const List = (props: LIstProps) => {
               className="h-[5px] w-[5px] rounded-full bg-primary-blue pr-1 mr-4
             "
             ></div>{" "}
-            <h1 className="dark:text-almost-white">{def}</h1>
+            <h1 key={index} className="dark:text-almost-white">
+              {def}
+            </h1>
           </div>
         ))}
       </div>
@@ -39,19 +41,19 @@ const List = (props: LIstProps) => {
 
       <div className="flex px-4 justify-between items-baseline my-4">
         <div className="h-[5px] w-[5px] rounded-full bg-primary-blue pr-1 mr-4"></div>
-        <div>
+        <div className="w-11/12">
           <h1 className="text-semi-light-black dark:text-almost-white">
             {props.verb.definition}
           </h1>
           <h1 className="text-dark-grey my-4">{`"${props.verb.example}"`}</h1>
         </div>
       </div>
-      <hr className="h-1 rounded-md mx-4 bg-semi-black border-none" />
+      <div className="h-1 w-full mt-1 dark:bg-semi-black  bg-almost-white"></div>
       <h1 className="px-4 text-dark-grey mt-4 underline">Source</h1>
       {props.verb.source.map((link, index) => (
         <h1
           key={index}
-          className="text-semi-light-black p-4 dark:text-almost-white"
+          className="text-semi-light-black p-4 dark:text-almost-white mb-12"
         >
           {link}
         </h1>

@@ -6,10 +6,12 @@ type FoundProps = {
 export const Found = (props: FoundProps) => {
   return (
     <>
-      <div className="flex justify-between p-4">
+      <div className="flex justify-between px-4  py-4">
         <div>
-          <h1 className="text-3xl dark:text-almost-white">{props.word}</h1>
-          <ruby className="text-3xl text-primary-blue mt-4">
+          <h1 className="text-3xl dark:text-almost-white sm:text-6xl">
+            {props.word}
+          </h1>
+          <ruby className="text-3xl text-primary-blue mt-8 ">
             {props.phonetics}
           </ruby>
         </div>
