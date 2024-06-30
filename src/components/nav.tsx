@@ -62,7 +62,7 @@ function Nav(props: FontProps) {
               Mono
             </option>
           </select>
-          <div className="flex justify-between ml-4 border-l-2 pl-4 border-slate-200">
+          <div className="flex justify-between ml-4 border-l-2 pl-4 border-semi-dark-grey">
             <button className="mr-4 outline-none" onClick={handleThemeChange}>
               {theme === "light" ? (
                 <svg
