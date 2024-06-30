@@ -6,7 +6,7 @@ import { Loading } from "./loading";
 import { ChangeEvent, useEffect, useState } from "react";
 import List from "./list";
 
-type definition = {
+type Definition = {
   definition: string;
 };
 type Verb = {
@@ -17,7 +17,7 @@ type Verb = {
 export const Main = () => {
   const [word, setWord] = useState<string>("");
   const [searchWord, setSearchWord] = useState<string>("");
-  const [meaning, setMeaning] = useState<definition[]>([]);
+  const [meaning, setMeaning] = useState<Definition[]>([]);
   const [phonetcis, setPhonetics] = useState<string>("");
   const [foundWord, setFoundWord] = useState("");
   const [status, setStatus] = useState("");
@@ -45,8 +45,8 @@ export const Main = () => {
           }
           setFoundWord(word[0].word);
           setPhonetics(word[0].phonetic);
-          const defs: definition[] = word[0].meanings[0].definitions.map(
-            (def: definition) => def?.definition
+          const defs: Definition[] = word[0].meanings[0].definitions.map(
+            (def: Definition) => def
           );
           setMeaning(defs);
           setSynonyms(word[0].meanings[0].synonyms);

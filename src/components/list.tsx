@@ -16,13 +16,13 @@ const List = (props: LIstProps) => {
     <>
       <h1 className="px-8 text-dark-grey mt-4">Meaning</h1>
       <div className=" p-8 ">
-        {props.meaning.map((def, index) => (
+        {props.meaning.map((definition, index) => (
           <div key={index} className="flex pt-0  items-baseline mb-4">
             <div
               className="h-[5px] w-[5px] rounded-full bg-primary-blue pr-1 mr-4
             "
             ></div>{" "}
-            <h1 className="dark:text-almost-white">{def.definition}</h1>
+            <h1 className="dark:text-almost-white">{definition.definition}</h1>
           </div>
         ))}
       </div>
