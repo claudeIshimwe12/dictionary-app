@@ -1,6 +1,9 @@
 import { Br } from "./NounBr";
+type definition = {
+  definition: string;
+};
 type LIstProps = {
-  meaning: [];
+  meaning: definition[];
   synonyms: string[];
   verb: {
     definition: string;
@@ -19,9 +22,7 @@ const List = (props: LIstProps) => {
               className="h-[5px] w-[5px] rounded-full bg-primary-blue pr-1 mr-4
             "
             ></div>{" "}
-            <h1 key={index} className="dark:text-almost-white">
-              {def}
-            </h1>
+            <h1 className="dark:text-almost-white">{def.definition}</h1>
           </div>
         ))}
       </div>
