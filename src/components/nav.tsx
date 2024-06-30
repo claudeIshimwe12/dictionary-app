@@ -41,7 +41,7 @@ function Nav(props: FontProps) {
   };
   return (
     <>
-      <div className="flex justify-between self-center pt-4 items-center md:px-tablet px-4 py-8">
+      <div className="flex justify-between self-center pt-4 items-center md:px-tablet px-4 py-8 lg:px-laptop">
         <div className="w-6 h-8 md:w-8 md:h-9">
           <img src={logIcon} alt="logo" />
         </div>

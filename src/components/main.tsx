@@ -69,7 +69,7 @@ export const Main = () => {
   }
   return (
     <>
-      <div className="md:px-tablet sm:px-4">
+      <div className="md:px-tablet sm:px-4 lg:px-laptop">
         <div className="pr-8 rounded-3xl bg-almost-white dark:bg-semi-light-black mx-4 sm:mx-0 flex justify-between ">
           <input
             type="text"

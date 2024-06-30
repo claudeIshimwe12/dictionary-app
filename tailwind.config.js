@@ -13,6 +13,7 @@ export default {
     extend: {
       spacing: {
         tablet: "4.38rem",
+        laptop: "19.56rem ", //"352px",
       },
       colors: {
         "primary-black": "#050505",
