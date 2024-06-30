@@ -1,8 +1,6 @@
 import { Br } from "./NounBr";
 type LIstProps = {
-  meaning: {
-    definition: string;
-  }[];
+  meaning: [];
   synonyms: string[];
   verb: {
     definition: string;
@@ -53,7 +51,7 @@ const List = (props: LIstProps) => {
       {props.verb.source.map((link, index) => (
         <h1
           key={index}
-          className="text-semi-light-black p-4 dark:text-almost-white mb-12"
+          className="text-semi-light-black p-4 dark:text-almost-white pb-12"
         >
           {link}
         </h1>
