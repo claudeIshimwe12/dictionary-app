@@ -75,6 +75,11 @@ export const Main = () => {
     }
     setSearchWord(word.trim());
   }
+  function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key == "Enter") {
+      setSearchWord(word.trim());
+    }
+  }
   return (
     <>
       <div className="md:px-tablet sm:px-4 lg:px-laptop">
@@ -86,6 +91,7 @@ export const Main = () => {
             name="word"
             id="word"
             onChange={handleChange}
+            onKeyDown={handleKeyPress}
           />
           <button className="ml-6">
             <img src={searIcon} alt="search-icon" onClick={handleClick} />

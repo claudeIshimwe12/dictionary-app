@@ -52,9 +52,15 @@ function Nav(props: FontProps) {
             className="bg-white dark:bg-primary-black dark:text-white outline-none "
             onChange={handleFontChange}
           >
-            <option value="sans-selif">Sans-Serif</option>
-            <option value="sans-selif">Serif</option>
-            <option value="sans-selif">Mono</option>
+            <option value="sans-selif" className="text-sm pr-2">
+              Sans-Serif
+            </option>
+            <option value="sans-selif" className="text-sm">
+              Serif
+            </option>
+            <option value="sans-selif" className="text-sm">
+              Mono
+            </option>
           </select>
           <div className="flex justify-between ml-4 border-l-2 pl-4 border-slate-200">
             <button className="mr-4 outline-none" onClick={handleThemeChange}>
