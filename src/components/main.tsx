@@ -28,6 +28,7 @@ export const Main = () => {
     source: [],
   });
   const [audioUrl, setAudioUrl] = useState("");
+  const [triggerError, setTrigger] = useState(false);
   const handleChange = function (event: ChangeEvent<HTMLInputElement>) {
     setWord(event.target.value);
   };
@@ -65,38 +66,48 @@ export const Main = () => {
           );
         });
     },
-    [searchWord, status, audioUrl]
+    [searchWord, status, audioUrl, triggerError]
   );
 
   function handleClick() {
-    setStatus("loading");
     if (word == "") {
-      setStatus("not found");
+      setTrigger(true);
+    } else {
+      setStatus("loading");
+      setTrigger(false);
+      setSearchWord(word.trim());
     }
-    setSearchWord(word.trim());
   }
   function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key == "Enter") {
+      word == "" ? setTrigger(true) : setTrigger(false);
       setSearchWord(word.trim());
     }
   }
   return (
     <>
       <div className="md:px-tablet sm:px-4 lg:px-laptop">
-        <div className="pr-8 rounded-3xl bg-almost-white dark:bg-semi-light-black mx-4 sm:mx-0 flex justify-between ">
+        <div className="relative">
           <input
             type="text"
-            className="bg-almost-white outline-none focus:bg-almost-white rounded-3xl p-4 h-full w-full dark:bg-semi-light-black placeholder:pl-4 placeholder:text-base placeholder:font-semibold placeholder:text-primary-black dark:placeholder:text-almost-white dark:focus:bg-semi-light dark:text-almost-white md:placeholder:text-xl"
-            placeholder="Search..."
+            className="bg-almost-white text-primary-black font-bold outline-none focus:bg-almost-white  rounded-xl p-4 h-full w-full dark:bg-semi-light-black placeholder:pl-4 placeholder:text-dark-grey placeholder:font-medium  dark:placeholder:text-almost-white dark:focus:bg-semi-light dark:text-almost-white md:placeholder:text-xl focus:border focus:border-primary-blue "
+            placeholder="Search for any word..."
             name="word"
             id="word"
             onChange={handleChange}
             onKeyDown={handleKeyPress}
           />
-          <button className="ml-6">
+          <button className="absolute right-6 top-4">
             <img src={searIcon} alt="search-icon" onClick={handleClick} />
           </button>
         </div>
+        <h1
+          className={`text-primary-red p-1 text-sm ${
+            triggerError ? "" : "hidden"
+          }`}
+        >
+          Wooops!, can't be empty...
+        </h1>
         {status === "loading" && <Loading />}
 
         {status === "found" && (
