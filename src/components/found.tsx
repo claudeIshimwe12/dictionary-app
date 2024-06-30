@@ -2,8 +2,12 @@ import playIcon from "../assets/images/icon-play.svg";
 type FoundProps = {
   word: string;
   phonetics: string;
+  audio: string;
 };
 export const Found = (props: FoundProps) => {
+  console.log("Url", props.audio);
+  const playAudio = new Audio(props.audio);
+
   return (
     <>
       <div className="flex justify-between px-4  py-4">
@@ -15,7 +19,7 @@ export const Found = (props: FoundProps) => {
             {props.phonetics}
           </ruby>
         </div>
-        <button>
+        <button onClick={() => playAudio.play()}>
           <img src={playIcon} alt="play" />
         </button>
       </div>

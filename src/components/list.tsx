@@ -44,7 +44,9 @@ const List = (props: LIstProps) => {
           <h1 className="text-semi-light-black dark:text-almost-white">
             {props.verb.definition}
           </h1>
-          <h1 className="text-dark-grey my-4">{`"${props.verb.example}"`}</h1>
+          <h1 className="text-dark-grey my-4">{`"${
+            props.verb.example || "Oops !, An example could not be found"
+          }" `}</h1>
         </div>
       </div>
       <div className="h-1 w-full mt-1 dark:bg-semi-black  bg-almost-white"></div>

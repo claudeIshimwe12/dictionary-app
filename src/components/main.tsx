@@ -27,6 +27,7 @@ export const Main = () => {
     example: "",
     source: [],
   });
+  const [audioUrl, setAudioUrl] = useState("");
   const handleChange = function (event: ChangeEvent<HTMLInputElement>) {
     setWord(event.target.value);
   };
@@ -55,17 +56,24 @@ export const Main = () => {
             example: word[0].meanings[1].definitions[0].example,
             source: word[0].sourceUrls,
           });
+          setAudioUrl(word[0].phonetics[2].audio);
         })
         .catch(() => {
           console.log("Something went wrong, Failed to Fetch Data");
+          setAudioUrl(
+            "https://api.dictionaryapi.dev/media/pronunciation/en/null-us.mp3"
+          );
         });
     },
-    [searchWord, status]
+    [searchWord, status, audioUrl]
   );
 
   function handleClick() {
     setStatus("loading");
-    setSearchWord(word);
+    if (word == "") {
+      setStatus("not found");
+    }
+    setSearchWord(word.trim());
   }
   return (
     <>
@@ -85,7 +93,9 @@ export const Main = () => {
         </div>
         {status === "loading" && <Loading />}
 
-        {status === "found" && <Found word={foundWord} phonetics={phonetcis} />}
+        {status === "found" && (
+          <Found word={foundWord} phonetics={phonetcis} audio={audioUrl} />
+        )}
         {status === "found" && <Br word="Noun" />}
         {status === "found" && (
           <List meaning={meaning} synonyms={synonyms} verb={verb} />
