@@ -49,10 +49,10 @@ function Nav(props: FontProps) {
           <select
             name="fonts"
             id="fonts"
-            className="bg-white dark:bg-primary-black dark:text-white outline-none "
+            className="bg-white border-none sel dark:focus:outline-1  w-full focus:outline-none focus:border-none focus:shadow-semi-dark-grey dark:bg-primary-black dark:text-white outline-none "
             onChange={handleFontChange}
           >
-            <option value="sans-selif" className="text-sm pr-2">
+            <option value="sans-selif" className="text-sm focus:px-1">
               Sans-Serif
             </option>
             <option value="sans-selif" className="text-sm">
@@ -62,7 +62,7 @@ function Nav(props: FontProps) {
               Mono
             </option>
           </select>
-          <div className="flex justify-between ml-4 border-l-2 pl-4 border-semi-dark-grey">
+          <div className="flex justify-between border-l-2 w-full pl-4 ml-4 border-semi-dark-grey">
             <button className="mr-4 outline-none" onClick={handleThemeChange}>
               {theme === "light" ? (
                 <svg
